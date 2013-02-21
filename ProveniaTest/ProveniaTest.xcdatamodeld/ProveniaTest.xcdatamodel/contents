@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="File">
+        <attribute name="created_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_shared" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="last_updated_by" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_updated_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mime_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parent_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path_by_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="share_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="share_level" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shared_by" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shared_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="File" positionX="189" positionY="189" width="200" height="328"/>
+    </elements>
+</model>
