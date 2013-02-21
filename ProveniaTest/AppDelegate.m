@@ -12,14 +12,6 @@
 
 @implementation AppDelegate
 
-- (void)dealloc
-{
-	[_window release];
-	[_managedObjectContext release];
-	[_managedObjectModel release];
-	[_persistentStoreCoordinator release];
-    [super dealloc];
-}
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -27,18 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	MasterViewController* masterViewController = nil;
 	
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil] autorelease];
+	    masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil];
 	} else {
-	    masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil] autorelease];
+	    masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil];
 	    
 	}
 	
-	self.window.rootViewController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
 	masterViewController.managedObjectContext = self.managedObjectContext;
 	
     [self.window makeKeyAndVisible];

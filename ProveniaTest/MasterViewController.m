@@ -12,18 +12,18 @@
 
 @interface MasterViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, UIPopoverControllerDelegate>
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) IBOutlet UILabel *statusLabel;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *prevPageBtn;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *nextPageBtn;
+@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *prevPageBtn;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *nextPageBtn;
 
-@property (nonatomic, retain) NSMutableData* connectionData;
+@property (nonatomic, strong) NSMutableData* connectionData;
 @property (nonatomic, assign) NSUInteger currentPageNumber;
 
-@property (nonatomic, retain) NSArray* fetchedObjects;
+@property (nonatomic, strong) NSArray* fetchedObjects;
 
-@property (nonatomic, retain) UIPopoverController* popover;
+@property (nonatomic, strong) UIPopoverController* popover;
 
 @end
 
@@ -40,17 +40,6 @@
     return self;
 }
 							
-- (void)dealloc{
-	[_connectionData release];
-	[_fetchedObjects release];
-	[_managedObjectContext release];
-	[_tableView release];
-	[_prevPageBtn release];
-	[_nextPageBtn release];
-	[_popover release];
-	[_statusLabel release];
-    [super dealloc];
-}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -114,7 +103,6 @@
 			
 			NSManagedObject* obj = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:_managedObjectContext];
 			[obj setValuesForKeysWithDictionary:dict];
-			[obj release];
 		}
 	} else{
 		[self connectionError];
@@ -131,11 +119,11 @@
 
 - (void)connectionError{
 	[self updateTitle];
-	[[[[UIAlertView alloc] initWithTitle:@"Connection error"
+	[[[UIAlertView alloc] initWithTitle:@"Connection error"
 							   message:@"There was an error while downling the data, please try again later."
 							  delegate:nil
 					 cancelButtonTitle:@"Ok"
-					 otherButtonTitles:nil] autorelease] show];
+					 otherButtonTitles:nil] show];
 }
 
 #pragma mark - NSURLConnectionDataDelegate protocol
@@ -233,12 +221,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 	
-	DetailViewController* detailVC = [[[DetailViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+	DetailViewController* detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
 	
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 		[self.navigationController pushViewController:detailVC animated:YES];
 	} else {
-		self.popover = [[[UIPopoverController alloc] initWithContentViewController:detailVC] autorelease];
+		self.popover = [[UIPopoverController alloc] initWithContentViewController:detailVC];
 		[_popover setPopoverContentSize:CGSizeMake(300.f, 300.f)];
 		[_popover setDelegate:self];
 		

@@ -10,25 +10,25 @@
 
 @interface CustomCell ()
 
-@property (retain, nonatomic) IBOutlet UILabel *status;
-@property (retain, nonatomic) IBOutlet UILabel *is_shared;
-@property (retain, nonatomic) IBOutlet UILabel *share_id;
-@property (retain, nonatomic) IBOutlet UILabel *last_updated_date;
-@property (retain, nonatomic) IBOutlet UILabel *item_id;
-@property (retain, nonatomic) IBOutlet UILabel *path;
-@property (retain, nonatomic) IBOutlet UILabel *link;
-@property (retain, nonatomic) IBOutlet UILabel *user_id;
-@property (retain, nonatomic) IBOutlet UILabel *name;
-@property (retain, nonatomic) IBOutlet UILabel *shared_by;
-@property (retain, nonatomic) IBOutlet UILabel *last_updated_by;
-@property (retain, nonatomic) IBOutlet UILabel *shared_date;
-@property (retain, nonatomic) IBOutlet UILabel *parent_id;
-@property (retain, nonatomic) IBOutlet UILabel *type;
-@property (retain, nonatomic) IBOutlet UILabel *mime_type;
-@property (retain, nonatomic) IBOutlet UILabel *size;
-@property (retain, nonatomic) IBOutlet UILabel *created_date;
-@property (retain, nonatomic) IBOutlet UILabel *shared_level;
-@property (retain, nonatomic) IBOutlet UILabel *path_by_id;
+@property (strong, nonatomic) IBOutlet UILabel *status;
+@property (strong, nonatomic) IBOutlet UILabel *is_shared;
+@property (strong, nonatomic) IBOutlet UILabel *share_id;
+@property (strong, nonatomic) IBOutlet UILabel *last_updated_date;
+@property (strong, nonatomic) IBOutlet UILabel *item_id;
+@property (strong, nonatomic) IBOutlet UILabel *path;
+@property (strong, nonatomic) IBOutlet UILabel *link;
+@property (strong, nonatomic) IBOutlet UILabel *user_id;
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *shared_by;
+@property (strong, nonatomic) IBOutlet UILabel *last_updated_by;
+@property (strong, nonatomic) IBOutlet UILabel *shared_date;
+@property (strong, nonatomic) IBOutlet UILabel *parent_id;
+@property (strong, nonatomic) IBOutlet UILabel *type;
+@property (strong, nonatomic) IBOutlet UILabel *mime_type;
+@property (strong, nonatomic) IBOutlet UILabel *size;
+@property (strong, nonatomic) IBOutlet UILabel *created_date;
+@property (strong, nonatomic) IBOutlet UILabel *shared_level;
+@property (strong, nonatomic) IBOutlet UILabel *path_by_id;
 
 
 @end
@@ -69,26 +69,4 @@
 	_path_by_id.text = [obj valueForKey:@"path_by_id"];
 }
 
-- (void)dealloc {
-	[_status release];
-	[_is_shared release];
-	[_share_id release];
-	[_last_updated_date release];
-	[_item_id release];
-	[_path release];
-	[_link release];
-	[_user_id release];
-	[_name release];
-	[_shared_by release];
-	[_last_updated_by release];
-	[_shared_date release];
-	[_parent_id release];
-	[_type release];
-	[_mime_type release];
-	[_size release];
-	[_created_date release];
-	[_shared_level release];
-	[_path_by_id release];
-	[super dealloc];
-}
 @end
